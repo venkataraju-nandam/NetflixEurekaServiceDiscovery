@@ -1,0 +1,21 @@
+# This default profile is used when running a single instance completely standalone:
+# Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf        templates
+spring:
+  thymeleaf:
+    enabled: false     # Disable Thymeleaf 
+profiles: default
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+
+#    hostname: my-eureka-server.com
